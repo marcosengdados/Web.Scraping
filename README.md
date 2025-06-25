@@ -1,33 +1,53 @@
-# Web.Scraping
-Criei um script em Python que realiza web scraping diretamente nessas páginas públicas. A ferramenta lê uma planilha com os links, acessa cada página automaticamente, coleta as informações mais relevantes e organiza tudo de forma estruturada.
+# 🔎 Sistema Automatizado de Monitoramento e Prospecção via Web Scraping com Interface Web e Cibersegurança
 
-No meu dia a dia, sempre me deparei com um desafio: acompanhar o andamento de diversos processos administrativos por meio de links que levavam a páginas de um site público. A cada novo processo, era necessário acessar manualmente a página, identificar a data da última atualização, a unidade responsável, a descrição do andamento e ainda verificar quem era o interessado. Esse trabalho, repetitivo e sujeito a erros, consumia um tempo precioso.
+Este projeto em Python automatiza a coleta e o monitoramento de processos públicos disponíveis em páginas do sistema SEI (Sistema Eletrônico de Informações), com foco em licenciamento ambiental. A ferramenta foi desenvolvida com o objetivo de otimizar o acompanhamento de andamentos administrativos e facilitar a prospecção comercial inteligente, evitando o acesso manual repetitivo a dezenas (ou centenas) de páginas.
 
-Esses dados são transformados em um relatório em Excel, pronto para ser consultado. E para completar a automação, o sistema ainda prepara e envia um e-mail formal, com texto personalizado, relatório anexado e a identidade visual da organização integrada — tudo de forma automática via Outlook.
+Com base em uma planilha de entrada contendo links públicos, o sistema realiza web scraping estruturado para extrair informações-chave, como:
 
-💡 Com essa solução, deixei de gastar horas com tarefas repetitivas e passei a entregar informações confiáveis, atualizadas e bem apresentadas em questão de minutos.
+Data da última atualização
 
-Essa automação surgiu de uma dor real e mostrou como a tecnologia, aplicada com foco e simplicidade, pode transformar uma rotina pesada em um processo inteligente e eficiente.
+Unidade responsável
 
-📈 Hoje, acompanhar processos deixou de ser esforço — virou estratégia.
+Descrição do andamento
 
+Interessado
 
-# Tecnologias e bibliotecas utilizadas: 🧰
+Nome do empreendimento
 
-Python – linguagem principal de desenvolvimento
+# 🚀 Funcionalidades
 
-pandas – leitura, manipulação e exportação de planilhas Excel
+Execução programada e automatizada com verificação em horários úteis e dias úteis (com filtro de feriados).
 
-requests – requisição HTTP para acessar páginas públicas
+Coleta estruturada de dados, com uso de proxy (ScraperAPI) para garantir anonimato e mascaramento do IP, reduzindo riscos de rastreio.
 
-BeautifulSoup (bs4) – extração e parsing de conteúdo HTML
+Geração de relatórios em Excel com os dados extraídos de forma consolidada.
 
-datetime – manipulação e formatação de datas
+Envio automático de e-mails via Outlook, com corpo de mensagem personalizado e anexo do relatório em Excel.
 
-time – controle de intervalo entre requisições (delay)
+Interface web (Flask) para visualização online dos dados extraídos, incluindo última verificação e relatórios.
 
-matplotlib.pyplot – suporte visual (se necessário para gráficos)
+Execução manual via navegador com apenas um clique para forçar a atualização dos dados.
 
-win32com.client – automação de envio de e-mails via Outlook
+Tratamento de erros e exceções com robustez para manter estabilidade em execução contínua.
 
-os – verificação de arquivos e caminhos no sistema
+# 🛡️ Cibersegurança Aplicada
+
+Para aumentar a privacidade e a estabilidade do scraping, foi integrada uma infraestrutura com mascaramento de IP via ScraperAPI, garantindo que os acessos realizados ao sistema público não exponham o local real da requisição. Essa medida evita possíveis bloqueios ou rastreamentos indesejados, assegurando maior segurança para a aplicação.
+
+# 📂 Infraestrutura Técnica
+
+Backend: Python + Flask
+
+Agendamento e Looping: threading, datetime, time
+
+Scraping: requests, BeautifulSoup, ftfy, ScraperAPI
+
+Manipulação de dados: pandas, openpyxl
+
+Envio de e-mails: win32com.client (Outlook)
+
+Interface web: HTML com render_template e rotas interativas
+
+# ❗ Observação Importante
+⚠️ O arquivo de Excel gerado com os dados reais não foi incluído neste repositório por tratar-se de propriedade intelectual da empresa responsável.
+Este código é disponibilizado como uma alternativa segura e eficaz para consultas automatizadas em sistemas públicos, oferecendo uma base sólida para aplicação em outras realidades e instituições.
